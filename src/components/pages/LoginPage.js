@@ -1,0 +1,210 @@
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { useNavigate, Link } from "react-router-dom";
+// import { motion } from "framer-motion";
+
+// const LoginPage = () => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleLogin = async () => {
+//     const emailInput = document.getElementById("emailInput");
+//     if (!emailInput.checkValidity()) {
+//       alert("Please enter a valid email address.");
+//       return;
+//     }
+//     try {
+//       const res = await axios.post("http://localhost:5000/api/users/login", {
+//         email,
+//         password,
+//       });
+//       localStorage.setItem("user", JSON.stringify(res.data));
+//       navigate("/dashboard");
+//     } catch (err) {
+//       alert("Login failed.");
+//     }
+//     try {
+//       const res = await axios.post("http://localhost:5000/api/users/login", {
+//         email,
+//         password,
+//       });
+//       localStorage.setItem("user", JSON.stringify(res.data));
+//       navigate("/dashboard");
+//     } catch (err) {
+//       alert("Invalid credentials");
+//     }
+//   };
+
+//   return (
+//     <div className="login-container">
+//       <h2>Login</h2>
+//       <input
+//         id="emailInput"
+//         placeholder="Email"
+//         type="email"
+//         required
+//         onChange={(e) => setEmail(e.target.value)}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Password"
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+//       <motion.button
+//         whileHover={{ scale: 1.1 }}
+//         whileTap={{ scale: 0.9 }}
+//         onClick={handleLogin}
+//       >
+//         Login
+//       </motion.button>
+//       <p>
+//         Don't have an account? <Link to="/signup">Signup</Link>
+//       </p>
+//     </div>
+//   );
+// };
+
+// export default LoginPage;
+
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Box, Button, TextField, Typography, Paper } from "@mui/material";
+
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    const emailInput = document.getElementById("emailInput");
+    if (!emailInput.checkValidity()) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    try {
+      const res = await axios.post("http://localhost:5000/api/users/login", {
+        email,
+        password,
+      });
+      localStorage.setItem("user", JSON.stringify(res.data));
+      navigate("/dashboard");
+    } catch (err) {
+      alert("Invalid credentials");
+    }
+  };
+
+  return (
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      sx={{
+        minHeight: "100vh",
+        bgcolor: "#9966CC",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        px: 2,
+      }}
+    >
+      <Paper
+        elevation={4}
+        sx={{
+          p: 4,
+          width: "100%",
+          maxWidth: 400,
+          borderRadius: 3,
+          bgcolor: "#ffffff",
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ color: "#0F9EF9", textAlign: "center" }}
+        >
+          Login
+        </Typography>
+
+        <TextField
+          id="emailInput"
+          label="Email"
+          type="email"
+          fullWidth
+          required
+          margin="normal"
+          variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: 2,
+              backgroundColor: "#C0C0C0",
+            },
+          }}
+        />
+
+        <TextField
+          label="Password"
+          type="password"
+          fullWidth
+          required
+          margin="normal"
+          variant="outlined"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: 2,
+              backgroundColor: "#C0C0C0",
+            },
+          }}
+        />
+
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Button
+            variant="contained"
+            fullWidth
+            onClick={handleLogin}
+            sx={{
+              mt: 2,
+              bgcolor: "#FFC067",
+              color: "#000",
+              fontWeight: "bold",
+              borderRadius: 2,
+              py: 1.5,
+              fontSize: "1rem",
+              "&:hover": {
+                bgcolor: "#e6a44f",
+              },
+            }}
+          >
+            Login
+          </Button>
+        </motion.div>
+
+        <Typography
+          variant="body2"
+          sx={{ mt: 3, textAlign: "center", color: "#7D99AA" }}
+        >
+          Don&apos;t have an account?{" "}
+          <Link
+            to="/signup"
+            style={{
+              color: "#66C4F",
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+          >
+            Sign up
+          </Link>
+        </Typography>
+      </Paper>
+    </Box>
+  );
+};
+
+export default LoginPage;
