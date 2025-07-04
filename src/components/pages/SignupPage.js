@@ -1,69 +1,3 @@
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { useNavigate, Link } from "react-router-dom";
-// import { motion } from "framer-motion";
-
-// const SignupPage = () => {
-//   const [form, setForm] = useState({ username: "", email: "", password: "" });
-//   const navigate = useNavigate();
-
-//   const handleSignup = async () => {
-//     const emailInput = document.getElementById("emailInput");
-//     if (!emailInput.checkValidity()) {
-//       emailInput.reportValidity(); // shows browser's validation popup
-//       return;
-//     }
-
-//     try {
-//       await axios.post("http://localhost:5000/api/users/signup", form);
-//       alert("Signup successful!");
-//       navigate("/");
-//     } catch (err) {
-//       alert("Signup failed.");
-//     }
-//   };
-
-//   return (
-//     <div className="signup-container">
-//       <h2>Signup</h2>
-
-//       <input
-//         placeholder="Username"
-//         required
-//         onChange={(e) => setForm({ ...form, username: e.target.value })}
-//       />
-
-//       <input
-//         id="emailInput"
-//         type="email"
-//         placeholder="Email"
-//         required
-//         onChange={(e) => setForm({ ...form, email: e.target.value })}
-//       />
-
-//       <input
-//         type="password"
-//         placeholder="Password"
-//         required
-//         onChange={(e) => setForm({ ...form, password: e.target.value })}
-//       />
-
-//       <motion.button
-//         whileHover={{ scale: 1.1 }}
-//         whileTap={{ scale: 0.9 }}
-//         onClick={handleSignup}
-//       >
-//         Signup
-//       </motion.button>
-
-//       <p>
-//         Already have an account? <Link to="/">Login</Link>
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default SignupPage;
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
@@ -142,7 +76,6 @@ const SignupPage = () => {
           id="emailInput"
           label="Email"
           type="email"
-          required
           fullWidth
           margin="normal"
           value={form.email}
