@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   const handleCreate = async () => {
     if (!newWishlist.trim()) return;
-    await axios.post("${apiUrl}/api/wishlists", {
+    await axios.post(`${apiUrl}/api/wishlists`, {
       name: newWishlist,
       owner: user.email,
       sharedWith: [],
