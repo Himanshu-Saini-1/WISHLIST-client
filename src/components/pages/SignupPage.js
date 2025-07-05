@@ -68,7 +68,7 @@ const SignupPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#3c0027",
+              backgroundColor: "#Ea9ab2",
             },
           }}
         />
@@ -84,7 +84,7 @@ const SignupPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#3c0027",
+              backgroundColor: "#Ea9ab2",
             },
           }}
         />
@@ -100,7 +100,7 @@ const SignupPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#3c0027",
+              backgroundColor: "#Ea9ab2",
             },
           }}
         />
