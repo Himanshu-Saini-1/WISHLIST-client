@@ -23,14 +23,22 @@ const Dashboard = () => {
 
   const handleCreate = async () => {
     if (!newWishlist.trim()) return;
-    await axios.post(`${apiUrl}/api/wishlists`, {
-      name: newWishlist,
-      owner: user.email,
-      sharedWith: [],
-      products: [],
-    });
-    setNewWishlist("");
-    fetchWishlists();
+    try {
+      await axios.post(`${apiUrl}/api/wishlists`, {
+        name: newWishlist,
+        owner: user.email,
+        sharedWith: [],
+        products: [],
+      });
+      setNewWishlist("");
+      fetchWishlists();
+    } catch (err) {
+      console.error(
+        "Error creating wishlist:",
+        err.response?.data || err.message
+      );
+      alert("Failed to create wishlist");
+    }
   };
 
   return (
