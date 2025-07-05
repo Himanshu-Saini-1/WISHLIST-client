@@ -74,7 +74,7 @@ const LoginPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#3c0027",
+              backgroundColor: "#Ea9ab2",
             },
           }}
         />
@@ -91,7 +91,7 @@ const LoginPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#3c0027",
+              backgroundColor: "#Ea9ab2",
             },
           }}
         />
@@ -104,7 +104,7 @@ const LoginPage = () => {
             sx={{
               mt: 2,
               bgcolor: "#7e0053",
-              color: "#000",
+              color: "#ffff",
               fontWeight: "bold",
               borderRadius: 2,
               py: 1.5,

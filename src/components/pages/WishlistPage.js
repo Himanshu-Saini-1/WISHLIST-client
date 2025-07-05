@@ -123,7 +123,7 @@ const WishlistPage = () => {
           onClick={() => navigate("/dashboard")}
           sx={{
             bgcolor: "#7e0053",
-            color: "#000",
+            color: "#ffff",
             fontWeight: "bold",
             borderRadius: 2,
             px: 2,
@@ -151,7 +151,7 @@ const WishlistPage = () => {
               onChange={(e) => setProduct({ ...product, name: e.target.value })}
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#5e003e",
+                  bgcolor: "#Ea9ab2",
                   borderRadius: 2,
                 },
               }}
@@ -167,7 +167,7 @@ const WishlistPage = () => {
               }
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#5e003e",
+                  bgcolor: "#Ea9ab2",
                   borderRadius: 2,
                 },
               }}
@@ -184,7 +184,7 @@ const WishlistPage = () => {
               }
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#5e003e",
+                  bgcolor: "#Ea9ab2",
                   borderRadius: 2,
                 },
               }}
@@ -198,7 +198,7 @@ const WishlistPage = () => {
                 onClick={handleAddOrUpdate}
                 sx={{
                   bgcolor: "#7e0053",
-                  color: "#000",
+                  color: "#ffff",
                   fontWeight: "bold",
                   borderRadius: 2,
                   height: "100%",
@@ -220,7 +220,7 @@ const WishlistPage = () => {
               onChange={(e) => setInviteEmail(e.target.value)}
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#5e003e",
+                  bgcolor: "#Ea9ab2",
                   borderRadius: 2,
                 },
               }}
@@ -234,7 +234,7 @@ const WishlistPage = () => {
                 onClick={handleInvite}
                 sx={{
                   bgcolor: "#7e0053",
-                  color: "#000",
+                  color: "#ffff",
                   fontWeight: "bold",
                   borderRadius: 2,
                   height: "100%",
@@ -260,7 +260,7 @@ const WishlistPage = () => {
               >
                 <Card
                   sx={{
-                    bgcolor: "#3c0027",
+                    background: "linear-gradient(30deg, #ff74d4, #9c0067)",
                     borderRadius: 4,
                     boxShadow: 4,
                     width: "95%",
@@ -274,10 +274,10 @@ const WishlistPage = () => {
                     sx={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                   />
                   <CardContent>
-                    <Typography variant="h6" sx={{ color: "#9c0067" }}>
+                    <Typography variant="h6" sx={{ color: "#fff" }}>
                       {p.name}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: "#444" }}>
+                    <Typography variant="body2" sx={{ color: "#44" }}>
                       ₹{p.price}
                     </Typography>
                     <Typography variant="caption" sx={{ color: "#fff" }}>
@@ -288,7 +288,7 @@ const WishlistPage = () => {
                         size="small"
                         variant="outlined"
                         onClick={() => handleEdit(idx)}
-                        sx={{ borderColor: "#7e0053", color: "#000" }}
+                        sx={{ borderColor: "#7e0053", color: "#ffff" }}
                       >
                         Edit
                       </Button>
@@ -296,7 +296,7 @@ const WishlistPage = () => {
                         size="small"
                         variant="outlined"
                         onClick={() => handleDelete(idx)}
-                        sx={{ borderColor: "#7e0053", color: "#000" }}
+                        sx={{ borderColor: "#7e0053", color: "#ffff" }}
                       >
                         Delete
                       </Button>

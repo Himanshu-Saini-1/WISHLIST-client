@@ -68,7 +68,7 @@ const Dashboard = () => {
             onChange={(e) => setNewWishlist(e.target.value)}
             sx={{
               "& .MuiOutlinedInput-root": {
-                backgroundColor: "#3c0027",
+                backgroundColor: "#Ea9ab2",
                 borderRadius: 2,
               },
             }}
@@ -79,7 +79,7 @@ const Dashboard = () => {
               onClick={handleCreate}
               sx={{
                 bgcolor: "#7e0053",
-                color: "#000",
+                color: "#ffff",
                 fontWeight: "bold",
                 px: 4,
                 borderRadius: 2,
@@ -106,7 +106,7 @@ const Dashboard = () => {
             >
               <Box
                 sx={{
-                  bgcolor: "#00A86B",
+                  bgcolor: "#3c0",
                   p: 3,
                   borderRadius: 2,
                   height: "100%",
