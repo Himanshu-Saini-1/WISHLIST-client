@@ -45,12 +45,12 @@ const Dashboard = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        bgcolor: "#9966CC",
+        bgcolor: "#1e0014",
         p: 3,
       }}
     >
       <Paper elevation={4} sx={{ p: 3, mb: 3, borderRadius: 3 }}>
-        <Typography variant="h4" sx={{ color: "#7D99AA", mb: 2 }}>
+        <Typography variant="h4" sx={{ color: "#9c0067", mb: 2 }}>
           Welcome, {user.username}
         </Typography>
 
@@ -68,7 +68,7 @@ const Dashboard = () => {
             onChange={(e) => setNewWishlist(e.target.value)}
             sx={{
               "& .MuiOutlinedInput-root": {
-                backgroundColor: "#C0C0C0",
+                backgroundColor: "#3c0027",
                 borderRadius: 2,
               },
             }}
@@ -78,14 +78,14 @@ const Dashboard = () => {
               variant="contained"
               onClick={handleCreate}
               sx={{
-                bgcolor: "#FFC067",
+                bgcolor: "#7e0053",
                 color: "#000",
                 fontWeight: "bold",
                 px: 4,
                 borderRadius: 2,
                 height: "100%",
                 "&:hover": {
-                  bgcolor: "#e6a44f",
+                  bgcolor: "#9c0067",
                 },
               }}
             >

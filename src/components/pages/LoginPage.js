@@ -36,7 +36,7 @@ const LoginPage = () => {
       transition={{ duration: 0.6 }}
       sx={{
         minHeight: "100vh",
-        bgcolor: "#9966CC",
+        bgcolor: "#1e0014",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -74,7 +74,7 @@ const LoginPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#C0C0C0",
+              backgroundColor: "#3c0027",
             },
           }}
         />
@@ -91,7 +91,7 @@ const LoginPage = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#C0C0C0",
+              backgroundColor: "#3c0027",
             },
           }}
         />
@@ -103,14 +103,14 @@ const LoginPage = () => {
             onClick={handleLogin}
             sx={{
               mt: 2,
-              bgcolor: "#FFC067",
+              bgcolor: "#7e0053",
               color: "#000",
               fontWeight: "bold",
               borderRadius: 2,
               py: 1.5,
               fontSize: "1rem",
               "&:hover": {
-                bgcolor: "#e6a44f",
+                bgcolor: "#9c0067",
               },
             }}
           >
@@ -120,7 +120,7 @@ const LoginPage = () => {
 
         <Typography
           variant="body2"
-          sx={{ mt: 3, textAlign: "center", color: "#7D99AA" }}
+          sx={{ mt: 3, textAlign: "center", color: "#9c0067" }}
         >
           Don&apos;t have an account?{" "}
           <Link

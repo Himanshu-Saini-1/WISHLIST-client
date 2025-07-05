@@ -91,7 +91,7 @@ const WishlistPage = () => {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "#9966CC", p: 3 }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "#1e0014", p: 3 }}>
       {/* Navigation Section */}
       <Box
         sx={{
@@ -122,13 +122,13 @@ const WishlistPage = () => {
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate("/dashboard")}
           sx={{
-            bgcolor: "#FFC067",
+            bgcolor: "#7e0053",
             color: "#000",
             fontWeight: "bold",
             borderRadius: 2,
             px: 2,
             "&:hover": {
-              bgcolor: "#e6a44f",
+              bgcolor: "#9c0067",
             },
           }}
         >
@@ -137,7 +137,7 @@ const WishlistPage = () => {
       </Box>
 
       <Paper elevation={4} sx={{ p: 3, borderRadius: 3, mb: 4 }}>
-        <Typography variant="h4" sx={{ color: "#7D99AA", mb: 2 }}>
+        <Typography variant="h4" sx={{ color: "#9c0067", mb: 2 }}>
           {wishlist?.name}
         </Typography>
 
@@ -151,7 +151,7 @@ const WishlistPage = () => {
               onChange={(e) => setProduct({ ...product, name: e.target.value })}
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#66C4FF",
+                  bgcolor: "#5e003e",
                   borderRadius: 2,
                 },
               }}
@@ -167,7 +167,7 @@ const WishlistPage = () => {
               }
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#66C4FF",
+                  bgcolor: "#5e003e",
                   borderRadius: 2,
                 },
               }}
@@ -184,7 +184,7 @@ const WishlistPage = () => {
               }
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#66C4FF",
+                  bgcolor: "#5e003e",
                   borderRadius: 2,
                 },
               }}
@@ -197,7 +197,7 @@ const WishlistPage = () => {
                 fullWidth
                 onClick={handleAddOrUpdate}
                 sx={{
-                  bgcolor: "#FFC067",
+                  bgcolor: "#7e0053",
                   color: "#000",
                   fontWeight: "bold",
                   borderRadius: 2,
@@ -220,7 +220,7 @@ const WishlistPage = () => {
               onChange={(e) => setInviteEmail(e.target.value)}
               sx={{
                 "& .MuiOutlinedInput-root": {
-                  bgcolor: "#66C4FF",
+                  bgcolor: "#5e003e",
                   borderRadius: 2,
                 },
               }}
@@ -233,7 +233,7 @@ const WishlistPage = () => {
                 fullWidth
                 onClick={handleInvite}
                 sx={{
-                  bgcolor: "#FFC067",
+                  bgcolor: "#7e0053",
                   color: "#000",
                   fontWeight: "bold",
                   borderRadius: 2,
@@ -260,7 +260,7 @@ const WishlistPage = () => {
               >
                 <Card
                   sx={{
-                    bgcolor: "#c0c0c0",
+                    bgcolor: "#3c0027",
                     borderRadius: 4,
                     boxShadow: 4,
                     width: "95%",
@@ -274,7 +274,7 @@ const WishlistPage = () => {
                     sx={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                   />
                   <CardContent>
-                    <Typography variant="h6" sx={{ color: "#7D99AA" }}>
+                    <Typography variant="h6" sx={{ color: "#9c0067" }}>
                       {p.name}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "#444" }}>
@@ -288,7 +288,7 @@ const WishlistPage = () => {
                         size="small"
                         variant="outlined"
                         onClick={() => handleEdit(idx)}
-                        sx={{ borderColor: "#FFC067", color: "#000" }}
+                        sx={{ borderColor: "#7e0053", color: "#000" }}
                       >
                         Edit
                       </Button>
@@ -296,7 +296,7 @@ const WishlistPage = () => {
                         size="small"
                         variant="outlined"
                         onClick={() => handleDelete(idx)}
-                        sx={{ borderColor: "#FFC067", color: "#000" }}
+                        sx={{ borderColor: "#7e0053", color: "#000" }}
                       >
                         Delete
                       </Button>
