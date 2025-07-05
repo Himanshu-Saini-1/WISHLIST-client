@@ -22,11 +22,10 @@ const WishlistPage = () => {
   const [product, setProduct] = useState({ name: "", imageUrl: "", price: "" });
   const [editIndex, setEditIndex] = useState(null);
   const [inviteEmail, setInviteEmail] = useState("");
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const fetchWishlist = async () => {
-    const res = await axios.get(
-      `http://localhost:5000/api/wishlists/${user.email}`
-    );
+    const res = await axios.get(`${apiUrl}/api/wishlists/${user.email}`);
     const matched = res.data.find((w) => w._id === id);
     setWishlist(matched);
   };
@@ -45,10 +44,7 @@ const WishlistPage = () => {
       updated.products.push(newProduct);
     }
 
-    await axios.put(
-      `http://localhost:5000/api/wishlists/${wishlist._id}`,
-      updated
-    );
+    await axios.put(`${apiUrl}/api/wishlists/${wishlist._id}`, updated);
     setProduct({ name: "", imageUrl: "", price: "" });
     setEditIndex(null);
     fetchWishlist();
@@ -63,10 +59,7 @@ const WishlistPage = () => {
   const handleDelete = async (index) => {
     const updated = { ...wishlist };
     updated.products.splice(index, 1);
-    await axios.put(
-      `http://localhost:5000/api/wishlists/${wishlist._id}`,
-      updated
-    );
+    await axios.put(`${apiUrl}/api/wishlists/${wishlist._id}`, updated);
     fetchWishlist();
   };
 
@@ -75,10 +68,7 @@ const WishlistPage = () => {
     const updated = { ...wishlist };
     if (!updated.sharedWith.includes(inviteEmail)) {
       updated.sharedWith.push(inviteEmail);
-      await axios.put(
-        `http://localhost:5000/api/wishlists/${wishlist._id}`,
-        updated
-      );
+      await axios.put(`${apiUrl}/api/wishlists/${wishlist._id}`, updated);
       setInviteEmail("");
       fetchWishlist();
     } else {

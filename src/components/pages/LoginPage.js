@@ -8,6 +8,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleLogin = async () => {
     const emailInput = document.getElementById("emailInput");
@@ -16,7 +17,7 @@ const LoginPage = () => {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:5000/api/users/login", {
+      const res = await axios.post(`${apiUrl}/api/users/login`, {
         email,
         password,
       });

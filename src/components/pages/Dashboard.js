@@ -9,6 +9,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [wishlists, setWishlists] = useState([]);
   const [newWishlist, setNewWishlist] = useState("");
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     if (!user) return navigate("/");
@@ -16,15 +17,13 @@ const Dashboard = () => {
   }, []);
 
   const fetchWishlists = async () => {
-    const res = await axios.get(
-      `http://localhost:5000/api/wishlists/${user.email}`
-    );
+    const res = await axios.get(`${apiUrl}/api/wishlists/${user.email}`);
     setWishlists(res.data);
   };
 
   const handleCreate = async () => {
     if (!newWishlist.trim()) return;
-    await axios.post("http://localhost:5000/api/wishlists", {
+    await axios.post("${apiUrl}/api/wishlists", {
       name: newWishlist,
       owner: user.email,
       sharedWith: [],

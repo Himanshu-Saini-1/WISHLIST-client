@@ -7,6 +7,7 @@ import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 const SignupPage = () => {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleSignup = async () => {
     const emailInput = document.getElementById("emailInput");
@@ -16,7 +17,7 @@ const SignupPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/users/signup", form);
+      await axios.post(`${apiUrl}/api/users/signup`, form);
       alert("Signup successful!");
       navigate("/");
     } catch (err) {
